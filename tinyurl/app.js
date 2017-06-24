@@ -9,6 +9,8 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var parseurl = require('./routes/parseurl');
 
+var MongoClient = require('mongodb').MongoClient
+
 var app = express();
 
 var x = 1;
@@ -27,6 +29,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/parseurl', parseurl);
+
+
+// Connect to the db
+MongoClient.connect("mongodb://umang:umang123@ds135382.mlab.com:35382/short_url", function(err, database) {
+  if(!err) {
+    db = database;
+    console.log("We are connected");
+          
+  }
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
