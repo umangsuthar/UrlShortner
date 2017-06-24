@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
+        <script>
+        $(document).ready(function(){
+        var url;
+        $("#submit").click(function(){
+          url=$("#url").val();
+          $.post("http://localhost:3000/parseurl",{url: url}, function(data){
+              
+              if(data != null)
+              {
+                $("#you").html(data);
+              }
+          });
+        });
+      });
+        </script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+        
+            Enter URL: <input type="text" name="url" id="url"><br>
+            <input type="submit" value="Submit" id="submit">
+        <div id="you">
+        </div>
+        
+  </body>
+</html>
