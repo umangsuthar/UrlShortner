@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+   <!-- take a full url from short.ejs and redirect to given url  -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+        var x = $("#uid").html(); 
+         if( (x.indexOf("http://") !== -1) ||(x.indexOf("https://") !== -1))
+         { window.location.href =  x; }
+         else
+         { window.location.href =  "http://" + x; }
+    });
+    </script>
+    
+  </head>
+  <body>
+    
+    <h2 id = "uid"><%= surl %> </h2>
+        
+  </body>
+</html>
