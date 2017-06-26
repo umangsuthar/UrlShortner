@@ -10,7 +10,6 @@
         $("#submit").click(function(){
           url=$("#url").val();
           $.post("http://localhost:3000/parseurl",{url: url}, function(data){
-              
               if(data != null)
               {
                 $("#you").html(data);
@@ -20,7 +19,7 @@
       });
         </script>
   </head>
-  <body>
+  <body bgcolor = "yellow">
     <h1>Short Your URL And Share It!!!!!!</h1>
         
             Enter URL: <input type="text" name="url" id="url"><br>
