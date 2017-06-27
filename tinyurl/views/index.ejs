@@ -4,7 +4,8 @@
     <title>Home Page</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
          <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
-        <script>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'> </link>
+    <script>
         $(document).ready(function(){
         var url;
         $("#submit").click(function(){
@@ -18,14 +19,29 @@
         });
       });
         </script>
+  <style>
+    body {
+        background-color: AliceBlue;
+    }
+  </style>
   </head>
-  <body bgcolor = "yellow">
-    <h1>Short Your URL And Share It!!!!!!</h1>
-        
-            Enter URL: <input type="text" name="url" id="url"><br>
-            <input type="submit" value="Submit" id="submit">
-        <div id="you">
-        </div>
-        
+  <body>
+    <div class="container">
+      <div class="row">
+            
+            <div class="form-group">
+                <label for="url">Enter URL:</label>    
+                <input type="text" class="form-control" name="url" id="url" placeholder="Paste Your URL and Short It!!!!">
+                <br><input type="button" class="btn" value="Shorten" id="submit">
+            </div>
+      </div>
+      <div class="row" >
+            <div>
+              <label>Shorted URL:</label>   
+            </div>
+            <div id="you">
+            </div>
+      </div>
+    </div>
   </body>
 </html>
